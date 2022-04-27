@@ -1,3 +1,5 @@
+rpm -ivh http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/centos-gpg-keys-8-3.el8.noarch.rpm && \
+dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y && \
 yum install -y epel-release && \
 yum install -y jq && \
 bash -c ' \
