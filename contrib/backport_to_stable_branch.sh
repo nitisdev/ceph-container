@@ -22,7 +22,7 @@ verify_commit () {
   for com in ${commit//,/ }; do
     if [[ $(git cat-file -t "$com" 2>/dev/null) != commit ]]; then
       echo "$com does not exist in your tree"
-      echo "Run 'git fetch origin master && git pull origin master'"
+      echo "Run 'git fetch origin main && git pull origin main'"
       exit 1
     fi
   done
@@ -51,6 +51,7 @@ cherry_pick () {
   done
   # Trim the first white space and use an array
   # Reference: https://github.com/koalaman/shellcheck/wiki/SC2086#exceptions
+  # shellcheck disable=SC2206
   x=(${x##*( )})
   git cherry-pick -x -s "${x[@]}"
 }
