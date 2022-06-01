@@ -2,6 +2,11 @@ rpm -ivh http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/cent
 dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y && \
 yum install -y epel-release && \
 yum install -y jq && \
+echo "[ceph-cortx-storage]" > /etc/yum.repos.d/ceph-cortx-storage.repo ; \
+echo "name=ceph-cortx-storage" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
+echo "baseurl=http://cortx-storage.colo.seagate.com/releases/ceph/ceph/centos-8/quincy/last_successful/" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
+echo "gpgcheck=0" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
+echo "enabled=1" >> /etc/yum.repos.d/ceph-cortx-storage.repo  ; \
 bash -c ' \
   if [ -n "__GANESHA_PACKAGES__" ]; then \
     echo "[ganesha]" > /etc/yum.repos.d/ganesha.repo ; \
@@ -76,9 +81,9 @@ bash -c ' \
     fi ;\
   else \
     RELEASE_VER=1 ;\
-    REPO_URL="http://download.ceph.com/rpm-${CEPH_VERSION}/el__ENV_[DISTRO_VERSION]__/"; \
+    REPO_URL="http://cortx-storage.colo.seagate.com/releases/ceph/ceph/centos-8/quincy/last_successful/"; \
   fi && \
-  rpm -Uvh "$REPO_URL/noarch/ceph-release-1-${RELEASE_VER}.el__ENV_[DISTRO_VERSION]__.noarch.rpm" && \
+  #rpm -Uvh "$REPO_URL" && \
   if [[ __ENV_[DISTRO_VERSION]__ -eq 8 ]]; then \
     yum install -y dnf-plugins-core ; \
     yum copr enable -y tchaikov/python-scikit-learn ; \
