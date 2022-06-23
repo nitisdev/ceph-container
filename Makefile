@@ -21,7 +21,8 @@ FLAVORS ?= \
 	octopus,centos,8 \
 	pacific,centos,8 \
 	quincy,centos,8 \
-	main,centos,8
+	main,centos,8 \
+  quincy,rockylinux,8
 
 TAG_REGISTRY ?= ceph
 
@@ -52,7 +53,8 @@ ALL_BUILDABLE_FLAVORS := \
 	octopus,centos,8 \
 	pacific,centos,8 \
 	quincy,centos,8 \
-	main,centos,8
+	main,centos,8 \
+  quincy,rockylinux,8
 
 # ==============================================================================
 # Build targets
