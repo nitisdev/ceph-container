@@ -48,7 +48,7 @@ clean_staging() {
 }
 
 make_staging() {
-  make BASEOS_REGISTRY=registry.redhat.io BASEOS_REPO=ubi8/ubi FLAVORS=main,ubi8,latest IMAGES_TO_BUILD=daemon-base || fatal "Cannot build rhel8"
+  make BASEOS_REGISTRY=registry.redhat.io BASEOS_REPO=ubi8/ubi-minimal FLAVORS=main,ubi8,latest IMAGES_TO_BUILD=daemon-base || fatal "Cannot build rhel8"
 }
 
 success() {
