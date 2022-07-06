@@ -2,8 +2,8 @@ yum install -y epel-release && \
 yum install -y jq && \
 yum install yum-utils epel-release wget bzip2 rpm-build dnf rpmdevtools dnf-plugins-core -y && \
 dnf config-manager --set-enabled powertools && \
-echo "[ceph-cortx-storage]" > /etc/yum.repos.d/ceph-cortx-storage.repo ; \
-echo "name=ceph-cortx-storage" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
+echo "[cortx-rgw-cortx-storage]" > /etc/yum.repos.d/ceph-cortx-storage.repo ; \
+echo "name=cortx-rgw-cortx-storage" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
 echo "baseurl=http://cortx-storage.colo.seagate.com/releases/ceph/cortx-rgw/rockylinux-8.4/main/last_successful/" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
 echo "gpgcheck=0" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
 echo "enabled=1" >> /etc/yum.repos.d/ceph-cortx-storage.repo  ; \
