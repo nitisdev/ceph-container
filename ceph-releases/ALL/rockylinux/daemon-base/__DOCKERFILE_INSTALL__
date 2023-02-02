@@ -2,7 +2,7 @@ yum install -y epel-release && \
 yum install -y jq && \
 echo "[ceph-cortx-storage]" > /etc/yum.repos.d/ceph-cortx-storage.repo ; \
 echo "name=ceph-cortx-storage" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
-echo "baseurl=http://cortx-storage.colo.seagate.com/releases/ceph/ceph/rockylinux-8.4/quincy/last_successful/" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
+echo "baseurl=http://cortx-storage.colo.seagate.com/releases/ceph/rockylinux-8.4/quincy/last_successful/" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
 echo "gpgcheck=0" >> /etc/yum.repos.d/ceph-cortx-storage.repo ; \
 echo "enabled=1" >> /etc/yum.repos.d/ceph-cortx-storage.repo  ; \
 bash -c ' \
